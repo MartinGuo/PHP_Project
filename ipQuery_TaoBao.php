@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file TaobaoIPQuery.php
  * @author guoshaomin(guo_shao_min@163.com) 
@@ -7,7 +6,7 @@
  * 
  * 淘宝查询IP接口 PHP
  **/
-Class TaobaoIPQuery{
+class TaobaoIPQuery{
     private static $_requestURL = 'http://ip.taobao.com/service/getIpInfo.php';
 
     /**
@@ -124,3 +123,4 @@ $region = $ipquery->get_region();
 $country = $ipquery->get_country();
 $city = $ipquery->get_city();
 **/
+?>
