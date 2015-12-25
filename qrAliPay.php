@@ -172,12 +172,12 @@ class QrAliPay extends BasicPay{
     }
 
     /**
-     *      * RSA验签
-     *           * @param $data 待签名数据
-     *                * @param $ali_public_key_path 支付宝的公钥文件路径
-     *                     * @param $sign 要校对的的签名结果
-     *                          * return 验证结果
-     *                               */
+     * RSA验签
+     * @param $data 待签名数据
+     * @param $ali_public_key_path 支付宝的公钥文件路径
+     * @param $sign 要校对的的签名结果
+     * return 验证结果
+     */
     public function rsaVerify($data, $ali_public_key_path, $sign) {
         $s = $this->rsaSign($data, $ali_public_key_path);
         $pubKey = file_get_contents($ali_public_key_path);
@@ -216,7 +216,7 @@ class QrAliPay extends BasicPay{
     protected function setInfo($notify) {
         $info = array();
         //支付状态
-        //update by jiangliuqing at 2015-01-20  支付宝的回调接口里没有看到trade_status
+        //支付宝的回调接口里没有看到trade_status
         $info['status'] = false;
         if (isset($notify['trade_status'])) {
             $info['status'] = ($notify['trade_status'] == 'TRADE_FINISHED' || $notify['trade_status'] == 'TRADE_SUCCESS') ? true : false;
