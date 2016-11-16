@@ -20,8 +20,7 @@ class IosPay{
             $endpoint = 'https://sandbox.itunes.apple.com/verifyReceipt';
         }else{
             $endpoint = 'https://buy.itunes.apple.com/verifyReceipt';
-        }
-        $postData = json_encode(
+        }        $postData = json_encode(
             array('receipt-data' => $receipt)
         );
 

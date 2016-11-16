@@ -49,7 +49,7 @@ class QrAliPay extends BasicPay{
 
         $param = array(
             'method' => 'alipay.trade.precreate',
-            'app_id' => '',
+            'app_id' => 'wx200385d843c73ab6',
             'charset' => 'utf-8',
             'sign_type' => 'RSA',
             'timestamp' => date('Y-m-d H:i:s',time()),
@@ -81,7 +81,7 @@ class QrAliPay extends BasicPay{
         $sign = $this->rsaSign($arg, $this->conf['pri'].$this->conf['private_key_path']);
         $params['sign'] =urlencode($sign);
         $url = 'https://openapi.alipay.com/gateway.do?charset=utf-8&';
-        $response = $this->getHttpResponsePOST($url,$param,$cacert_url = getcwd().'/cert/cacert.pem');
+        $response = $this->getHttpResponsePOST($url,$param);
         $result = json_decode($response,true);
         var_dump($result);die();
         if($result['alipay_trade_precreate_response']['code'] != 10000){

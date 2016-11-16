@@ -8,5 +8,7 @@ var_dump($info);
 */
 $str = '智π国际_报名收费订单小时';
 $res = iconv('','UTF-8',$str);
-var_dump($res);die;
 
+
+
+var_dump('test git');die;
